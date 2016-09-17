@@ -2,10 +2,7 @@
     background-color: #fff;
     border-style: none;
 }
-#logo{
-    
-    position: relative;
-    left: 438px;
-    bottom: 68px;
-}
 
+.img-responsive {
+    margin-bottom: 20px;
+}
