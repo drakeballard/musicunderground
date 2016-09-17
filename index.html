@@ -20,64 +20,64 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-            </div>
+                </div>
         </nav>
         <img src="assets/images/Logomakr_7Rv0Xg.png" id="logo">
         <div class="addArtist">
             <div class="panel panel-primary artistList">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong>Add Artist</strong></h3>
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Add Artist</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="inputArtist">Artist</label>
+                            <input type="artist" class="form-control" id="inputArtist" placeholder="Artist">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSong">Song</label>
+                            <input type="song" class="form-control" id="inputSong" placeholder="Song">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputLocation">Location</label>
+                            <input type="Location" class="form-control" id="inputLocation" placeholder="Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputFB">Facebook</label>
+                            <input type="Facebook" class="form-control" id="inputFB" placeholder="Facebook">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <input type="file" id="exampleInputFile">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
             </div>
-            <div class="panel-body">
-            <form>
-                <div class="form-group">
-                    <label for="inputArtist">Artist</label>
-                    <input type="artist" class="form-control" id="inputArtist" placeholder="Artist">
+            <div class="panel panel-primary artistList">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Contestants</strong></h3>
                 </div>
-                <div class="form-group">
-                    <label for="inputSong">Song</label>
-                    <input type="song" class="form-control" id="inputSong" placeholder="Song">
+                <div class="panel-body">
+                    <table class="table table-hover" id='trainTable'>
+                        <thead>
+                            <tr>
+                                <th>Artist</th>
+                                <th>Song Title</th>
+                                <th>Location</th>
+                                <th>Facebook</th>
+                                <th>Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="form-group">
-                    <label for="inputLocation">Location</label>
-                    <input type="Location" class="form-control" id="inputLocation" placeholder="Location">
-                </div>
-                <div class="form-group">
-                    <label for="inputFB">Facebook</label>
-                    <input type="Facebook" class="form-control" id="inputFB" placeholder="Facebook">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <input type="file" id="exampleInputFile">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
             </div>
         </div>
-        <div class="panel panel-primary artistList">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong>Contestants</strong></h3>
-            </div>
-            <div class="panel-body">
-                <table class="table table-hover" id='trainTable'>
-                    <thead>
-                        <tr>
-                            <th>Artist</th>
-                            <th>Song Title</th>
-                            <th>Location</th>
-                            <th>Facebook</th>
-                            <th>Votes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
         </div>
-    </div>
-    </div>
-    <script type="text/javascript" src="assets/javascript/app.js">
-    </script>
+        <script type="text/javascript" src="assets/javascript/app.js">
+        </script>
 </body>
 
 </html>
