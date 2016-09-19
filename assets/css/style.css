@@ -6,3 +6,9 @@
 .img-responsive {
     margin-bottom: 20px;
 }
+.panel-primary {
+	padding: 0px;
+}
+.artistList{
+	right: 5px;
+}
