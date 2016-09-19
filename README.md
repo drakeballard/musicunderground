@@ -3,7 +3,7 @@
 github
 https://github.com/drakeballard/musicunderground
 
-herokuapp
+herokuapp.
 https://shrouded-ridge-77780.herokuapp.com/
 
 
