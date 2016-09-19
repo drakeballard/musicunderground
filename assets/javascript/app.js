@@ -41,7 +41,8 @@ $("#addArtist").on("click", function() {
 })
 
 
-    //if registrant does not include all field box, error message needs to be alerted
+    //if registrant does not include all field box, error message needs to be alerted. Jon, you were able to do a registrant error if user does not provide all information. please provide.
+
 
 //if info is input correctl, information will be stored in a database
 
