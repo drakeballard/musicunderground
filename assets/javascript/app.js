@@ -15,6 +15,8 @@
 //Pseudo code
 //Registrant needs to input information for the following: Artist name, location (autocomplete), song, facebook, and upload song
 
+
+
     //if registrant does not include all field box, error message needs to be alerted
 
 //if info is input correctl, information will be stored in a database
