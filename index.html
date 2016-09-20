@@ -1,32 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Music Underground</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="http://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-</head>
+	<title></title>
+	<meta charset="utf-8"></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!-- La<img src="assets/images/headphones.jpg" class="thumbnail center-block"> compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- Firebase Reference -->
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+
+	<!-- Moment.js Reference -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+
+</head>		
 <body>
-    <!--This container right here may consist a  about, and contact page!  -->
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-        <img src="assets/images/Logo100.png" class="img-responsive center-block" alt="Responsive-Image">
-        <div class="row">
-        <div class="panel panel-primary col-md-5 col-md-offset-1 artistList">
+	<div class="container-fluid">
+		<!-- Logo -->
+		<header>
+			<div id ="logo" class="row">
+				<div class="col-col-md-12">
+					<img src="assets/images/Logo100.png" class="img-responsive center-block" alt="Responsive-Image">
+				</div>
+			</div>
+		</header>
+	</div>
+	<!-- Navigation -->
+	<nav class="navbar navbar-default" role="heading">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div id="navbar2" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Compete</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Current Artists in Battle -->
+	<div  id="competition" class="container-fluid">
+		<div id=" competition" class="row">
+			<div id = "artist1" class="col-sm-12 col-md-3 artists">
+				<a href="https://www.facebook.com/adornthewicked/?fref=ts" target="_blank">
+					<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				</a>	
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 1000000</button>
+			</div>
+			<div id = "artist2" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>
+			<div id = "artist3" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>
+			<div id = "artist4" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>									
+		</div>
+		<div class="row">
+			<div id = "artist5" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>
+			<div id = "artist6" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>
+			<div id = "artist7" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>
+			<div id = "artist8" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>									
+		</div>	
+		<div class="row">
+			<div id = "artist9" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>
+			<div id = "artist10" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>
+			<div id = "artist11" class="col-sm-12 col-md-3 artists">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>
+			<div id = "artist12" class="col-sm-12 col-md-3 artists hide">
+				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
+				<figcaption class="text-center">Your Band</figcaption>
+				<figcaption class="text-center">Song Title</figcaption>
+				<audio controls class="center-block">
+					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
+			</div>									
+		</div>
+	</div>
+            <form>    
                 <div class="panel-heading">
                     <h3 class="panel-title"><strong>Add Artist</strong></h3>
                 </div>
@@ -52,35 +207,15 @@
                         <input type="file" id="exampleInputFile">
                     </div>
                     <button type="submit" class="btn btn-default" id="addArtist">Submit</button>
-                    </form>
                 </div>
-            </div>
+			</form>
 
-        <div class="panel panel-primary col-md-5">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong>Contestants</strong></h3>
-            </div>
-            <div class="panel-body">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Artist</th>
-                            <th>Song Title</th>
-                            <th>Location</th>
-                            <th>Facebook</th>
-                            <th>Votes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
 
-        </div>
-        </div>
-    </div>
-    <script type="text/javascript" src="assets/javascript/app.js">
-    </script>
+	<!-- La<img src="assets/images/headphones.jpg" class="thumbnail center-block"> JQuery -->	
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- Javascript -->
+	<script src="assets/javascript/app.js"></script>
 </body>
-
 </html>

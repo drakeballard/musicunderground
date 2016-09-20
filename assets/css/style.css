@@ -1,4 +1,129 @@
+html {
+	height: 100%;
+}
+
+body {
+	background: #000000;
+	background-size: cover;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	color: #ffffff;
+	padding: 10px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* General Settings */
+
+img {
+	height: 200px;
+	padding: 0 0 10px 0;
+}
+
+.btn-vote { 
+  color: #ffffff; 
+  background-color: #ff0000; 
+  border-color: #ffffff; 
+  width: 150px;
+} 
+ 
+.btn-vote:hover, 
+.btn-vote:focus, 
+.btn-vote:active, 
+.btn-vote.active, 
+.open .dropdown-toggle.btn-vote { 
+  color: #ff0000; 
+  background-color: #ffffff; 
+  border-color: #ff0000; 
+  width: 150px;
+} 
+ 
+.btn-vote:active, 
+.btn-vote.active, 
+.open .dropdown-toggle.btn-vote { 
+  color: #ffffff; 
+  background-color: #ff0000; 
+  border-color: #ffffff;
+  width: 150px;
+} 
+
+audio { 
+	width: 160px; 
+	margin:10px; 
+}
+
+/*Header*/
+
+#logo {
+	background: #ffffff;
+	padding: 10px 0 10px 0;
+}
+
+/* Menu */
+
 .navbar-default {
+  background-color: #000000;
+  border-color: #000000;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ff0000;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ff0000;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ff0000;
+  background-color: #000000;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ff0000;
+  background-color: #000000;
+}
+.navbar-default .navbar-toggle {
+  border-color: #000000;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #000000;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ff0000;
+}
+
+/*Battle Artists*/
+
+.artists {
+	padding: 10px 0 10px 0;
+}
+
+
+/*.navbar-default {
     background-color: #fff;
     border-style: none;
 }
@@ -11,4 +136,23 @@
 }
 .artistList{
 	right: 5px;
+}*/
+
+@media (max-width: 767px) {
+
+/* Menu */
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ff0000;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ff0000;
+    background-color: #000000;
+  }
 }
