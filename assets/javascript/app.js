@@ -2,15 +2,16 @@
 
 //Firebase application
 // // Initialize Firebase
-// var config = {
-//   apiKey: "AIzaSyDjEsXkOlnjKIq2L-Ldgr2SYTvXRWjhgfc",
-//   authDomain: "music-underground.firebaseapp.com",
-//   databaseURL: "https://music-underground.firebaseio.com",
-//   storageBucket: "music-underground.appspot.com",
-//   messagingSenderId: "381719161618"
-// };
-// firebase.initializeApp(config);
+var config = {
+  apiKey: "AIzaSyDjEsXkOlnjKIq2L-Ldgr2SYTvXRWjhgfc",
+  authDomain: "music-underground.firebaseapp.com",
+  databaseURL: "https://music-underground.firebaseio.com",
+  storageBucket: "music-underground.appspot.com",
+  messagingSenderId: "381719161618"
+};
+firebase.initializeApp(config);
 
+var database = firebase.database();
 
 //Pseudo code
 //Registrant needs to input information for the following: Artist name, location (autocomplete), song, facebook, and upload song
@@ -24,17 +25,39 @@ $("#addArtist").on("click", function() {
 	var location = $('#inputLocation').val().trim();
 	var facebook = $('#inputFB').val().trim();
 
-	// Console log each of the user inputs to confirm you are receiving them
 	console.log(artist);
 	console.log(song);
 	console.log(location);
 	console.log(facebook);
+
+
+	var newUser = {
+		artist : artist,
+		song : song,
+		location : location,
+		facebook : facebook
+
+		//is a actual file consdiered as a val
+		// song : song
+
+	}
+
+	database.ref().push(newUser);
+
+	// Console log each of the user inputs to confirm you are receiving them
+	console.log(newUser.artist);
+	console.log(newUser.song);
+	console.log(newUser.location);
+	console.log(newUser.facebook);
+
 
 	// Dump all of the new information into the relevant sections "THIS MAY BE REPLACED USING FIREBASE DATABASE FOR HTML REPRESENTATION"
 	// $("#namedisplay").html(name);
 	// $("#emaildisplay").html(email);
 	// $("#agedisplay").html(age);
 	// $("#commentdisplay").html(comment);
+
+
 
 	// Don't refresh the page!
 	return false;
