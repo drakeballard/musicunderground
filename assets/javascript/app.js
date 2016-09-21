@@ -57,7 +57,7 @@ $("#addArtist").on("click", function() {
 	$('#inputLocation').val("");
 	$('#inputFB').val("");
 	//
-	
+
 
 	// Don't refresh the page!
 	return false;
@@ -66,15 +66,25 @@ $("#addArtist").on("click", function() {
 database.ref().on("child_added", function(childSnapshot, prevChildKey){
 	console.log(childSnapshot.val());
 
-	var inputArtist = childSnapshot.val().artist;
-	var inputSong = childSnapshot.val().song;
-	var inputLocation = childSnapshot.val().location;
-	var inputFB = childSnapshot.val().facebook;
+var query = firebase.database().ref("newUser");
+query.once("value")
+.then(function(snapshot) {
+	snapshot.forEach(function(childSnapshot){
+		var childData = childSnapshot.val();
+		console.log(childData);
 
-	console.log(inputArtist);
-	console.log(inputSong);
-	console.log(inputLocation);
-	console.log(inputFB);
+			var inputArtist = childSnapshot.val().artist;
+			var inputSong = childSnapshot.val().song;
+			var inputLocation = childSnapshot.val().location;
+			var inputFB = childSnapshot.val().facebook;
+
+			console.log(inputArtist);
+			console.log(inputSong);
+			console.log(inputLocation);
+			console.log(inputFB);
+	});
+});
+
 
 })
 
