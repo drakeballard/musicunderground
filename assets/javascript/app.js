@@ -69,6 +69,20 @@ $("#addArtist").on("click", function() {
 	return false;
 });
 
+database.ref().on("child_added", function(childSnapshot, prevChildKey){
+	console.log(childSnapshot.val());
+
+	var inputArtist = childSnapshot.val().artist;
+	var inputSong = childSnapshot.val().song;
+	var inputLocation = childSnapshot.val().location;
+	var inputFB = childSnapshot.val().facebook;
+
+	console.log(inputArtist);
+	console.log(inputSong);
+	console.log(inputLocation);
+	console.log(inputFB);
+
+})
 
     //if registrant does not include all field box, error message needs to be alerted. Jon, you were able to do a registrant error if user does not provide all information. please provide.
 
