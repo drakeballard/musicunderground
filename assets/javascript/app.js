@@ -56,14 +56,8 @@ $("#addArtist").on("click", function() {
 	$('#inputSong').val("");
 	$('#inputLocation').val("");
 	$('#inputFB').val("");
-
-	// Dump all of the new information into the relevant sections "THIS MAY BE REPLACED USING FIREBASE DATABASE FOR HTML REPRESENTATION"
-	// $("#namedisplay").html(name);
-	// $("#emaildisplay").html(email);
-	// $("#agedisplay").html(age);
-	// $("#commentdisplay").html(comment);
-
-
+	//
+	
 
 	// Don't refresh the page!
 	return false;
