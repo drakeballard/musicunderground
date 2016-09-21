@@ -50,6 +50,12 @@ $("#addArtist").on("click", function() {
 	console.log(newUser.location);
 	console.log(newUser.facebook);
 
+	alert("You successfully added a new band to the page! Please stay TUNED!!!! 🤘🎸🤘")
+
+	$('#inputArtist').val("");
+	$('#inputSong').val("");
+	$('#inputLocation').val("");
+	$('#inputFB').val("");
 
 	// Dump all of the new information into the relevant sections "THIS MAY BE REPLACED USING FIREBASE DATABASE FOR HTML REPRESENTATION"
 	// $("#namedisplay").html(name);
@@ -61,7 +67,7 @@ $("#addArtist").on("click", function() {
 
 	// Don't refresh the page!
 	return false;
-})
+});
 
 
     //if registrant does not include all field box, error message needs to be alerted. Jon, you were able to do a registrant error if user does not provide all information. please provide.
