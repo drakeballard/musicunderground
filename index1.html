@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MUSIC UNDERGROUND's</title>
+	<title></title>
 	<meta charset="utf-8"></head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,13 +12,14 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 
 	<!-- Firebase Reference -->
-	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
 	<!-- Moment.js Reference -->
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 
-</head>
+
+</head>		
 <body>
 	<div class="container-fluid">
 		<!-- Logo -->
@@ -51,13 +52,12 @@
 	</nav>
 	<!-- Current Artists in Battle -->
 	<div  id="competition" class="container-fluid">
-
 		<div id=" competition" class="row">
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist1" class="col-sm-12 col-md-3 artists">
 				<a href="https://www.facebook.com/adornthewicked/?fref=ts" target="_blank">
 					<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
-				</a>
-				<figcaption class="text-center" id="artistName1">Your Band</figcaption>
+				</a>	
+				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
 				<audio controls class="center-block">
 					<source src="assets/audio/guitar.mp3" type="audio/ogg">
@@ -65,8 +65,7 @@
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 1000000</button>
 			</div>
-
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist2" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -76,8 +75,7 @@
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
 			</div>
-
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist3" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -87,8 +85,7 @@
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
 			</div>
-
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist4" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -97,11 +94,10 @@
 					Your browser does not support the audio element.
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
-			</div>
+			</div>									
 		</div>
-
 		<div class="row">
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist5" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -111,8 +107,7 @@
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
 			</div>
-
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist6" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -122,8 +117,7 @@
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
 			</div>
-
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist7" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -133,8 +127,7 @@
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
 			</div>
-
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist8" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -143,11 +136,10 @@
 					Your browser does not support the audio element.
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
-			</div>
-		</div>
-
+			</div>									
+		</div>	
 		<div class="row">
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist9" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -157,8 +149,7 @@
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
 			</div>
-
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist10" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -168,8 +159,7 @@
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
 			</div>
-
-			<div class="col-sm-12 col-md-3 artists">
+			<div id = "artist11" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -179,8 +169,7 @@
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
 			</div>
-
-			<div class="col-sm-12 col-md-3 artists hide">
+			<div id = "artist12" class="col-sm-12 col-md-3 artists">
 				<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">
 				<figcaption class="text-center">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
@@ -189,40 +178,43 @@
 					Your browser does not support the audio element.
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 100</button>
-			</div>
+			</div>									
 		</div>
 	</div>
-            <form>
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Add Artist</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label for="inputArtist">Artist</label>
-                        <input type="artist" class="form-control" id="inputArtist" placeholder="Artist">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputSong">Song</label>
-                        <input type="song" class="form-control" id="inputSong" placeholder="Song">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputLocation">Location</label>
-                        <input type="Location" class="form-control" id="inputLocation" placeholder="Location">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputFB">Facebook</label>
-                        <input type="Facebook" class="form-control" id="inputFB" placeholder="ex: https://www.facebook.com/bandofhorses">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputFile">File input</label>
-                        <input type="file" id="exampleInputFile">
-                    </div>
-                    <button type="submit" class="btn btn-default" id="addArtist">Submit</button>
-                </div>
-			</form>
+	<div class="container-fluid">
+	    <form id="artistSignup">    
+	        <div class="panel-heading">
+	            <h2 class="panel-title text-center"><strong>Add Artist</strong></h2>
+	        </div>
+	        <div class="panel-body">
+	            <div class="form-group">
+	                <label for="inputArtist">Artist</label>
+	                <input type="artist" class="form-control" id="inputArtist" placeholder="Artist">
+	            </div>
+	            <div class="form-group">
+	                <label for="inputSong">Song</label>
+	                <input type="song" class="form-control" id="inputSong" placeholder="Song">
+	            </div>
+	            <div class="form-group">
+	                <label for="inputLocation">Location</label>
+	                <input type="Location" class="form-control" id="inputLocation" placeholder="Location">
+	            </div>
+	            <div class="form-group">
+	                <label for="inputFB">Facebook</label>
+	                <input type="Facebook" class="form-control" id="inputFB" placeholder="Facebook">
+	            </div>
+	            <div class="form-group fileUpload">
+	                <label for="exampleInputFile">File input</label>
+	                <input type="file" id="exampleInputFile">
+	                <input id="uploadBtn" type="file" class="upload" />
+	            </div>
+	            <button type="submit" class="btn btn-vote" id="addArtist">Submit</button>
+	        </div>
+		</form>
+	</div>
 
 
-	<!-- La<img src="assets/images/headphones.jpg" class="thumbnail center-block"> JQuery -->
+	<!-- JQuery -->	
 	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 

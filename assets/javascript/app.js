@@ -64,26 +64,41 @@ $("#addArtist").on("click", function() {
 });
 
 database.ref().on("child_added", function(childSnapshot, prevChildKey){
-	console.log(childSnapshot.val());
+	// console.log(childSnapshot.val());
 
-var query = firebase.database().ref("newUser");
-query.once("value")
-.then(function(snapshot) {
-	snapshot.forEach(function(childSnapshot){
-		var childData = childSnapshot.val();
-		console.log(childData);
+		var artist = $('<div class="col-sm-12 col-md-3 artists">');
+		picture = $('<img src="assets/images/logo100.png" id = "artist1" class="thumbnail center-block">');
+		artist.append(picture);
+		artistName = $('<figcapture>').text(childSnapshot.val().artist);
+		artist.append(artistName);
+		// artist = artist + $('<figcapture>').text('Song Title');
+		// artist = artist + $('<audio class="audio">');
+		// artist = artist + $('<button type="button" id="vote1" class="btn btn-vote center-block">').text('Vote');
+		console.log(artist);
+		$('#competition').append(artist);	
 
-			var inputArtist = childSnapshot.val().artist;
-			var inputSong = childSnapshot.val().song;
-			var inputLocation = childSnapshot.val().location;
-			var inputFB = childSnapshot.val().facebook;
 
-			console.log(inputArtist);
-			console.log(inputSong);
-			console.log(inputLocation);
-			console.log(inputFB);
-	});
-});
+
+		// $('#artistName1').html(childSnapshot.val().artist);
+
+// var query = firebase.database().ref("newUser");
+// query.once("value")
+// .then(function(snapshot) {
+// 	snapshot.forEach(function(childSnapshot){
+// 		var childData = childSnapshot.val();
+// 		console.log(childData);
+
+// 			var inputArtist = childSnapshot.val().artist;
+// 			var inputSong = childSnapshot.val().song;
+// 			var inputLocation = childSnapshot.val().location;
+// 			var inputFB = childSnapshot.val().facebook;
+
+// 			console.log(inputArtist);
+// 			console.log(inputSong);
+// 			console.log(inputLocation);
+// 			console.log(inputFB);
+// 	});
+// });
 
 
 })
