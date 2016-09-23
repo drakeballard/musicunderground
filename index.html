@@ -43,7 +43,9 @@
 			</div>
 			<div id="navbar2" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Login</a></li>
+					<!-- Changing Login from link to a menu item with an id to trigger the sign in function. -->
+					<li id="facebookSignin">Login</li>
+					<li id="signinStatus"></li>
 					<li><a href="#">Compete</a></li>
 				</ul>
 			</div>
@@ -60,7 +62,7 @@
 				<figcaption class="text-center" id="artistName1">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
 				<audio controls class="center-block">
-					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					<source src="https://firebasestorage.googleapis.com/v0/b/music-underground.appspot.com/o/images%2Fguitar.mp3?alt=media&token=d29fb6f3-5cf7-4f24-afcf-035a21966dba" type="audio/ogg">
 					Your browser does not support the audio element.
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 1000000</button>
