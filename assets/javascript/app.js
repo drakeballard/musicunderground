@@ -1,3 +1,5 @@
+// alert("Test 1,2,3");
+
 //Firebase application
 // // Initialize Firebase
 var config = {
@@ -10,35 +12,6 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
-
-// Set up new instance of Firebase Authorization
-
-var provider = new firebase.auth.FacebookAuthProvider();
-
-// Check to see if voter is signed in and if so diasable all vote buttons
-
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in. Add code to disable all Vote Buttons
-    $('#signinStatus').html('Signed In');
-  } else {
-    // No user is signed in. Add code to enable all Vote Buttons
-  }
-});
-
-// Code which will be used within the vote button to add voter to authorized users so if voter comes back won't be able to vote again.
-
-// function facebookSignin() {
-$("#facebookSignin").on("click", function() {    
-    
-   firebase.auth().signInWithPopup(provider).then(function(result) {
-      var token = result.credential.accessToken;
-      var user = result.user;
-   }).catch(function(error) {
-      console.log(error.code);
-      console.log(error.message);
-   });
-});
 
 //Pseudo code
 //Registrant needs to input information for the following: Artist name, hometown (autocomplete), song, facebook, and upload song
