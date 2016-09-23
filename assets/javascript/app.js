@@ -81,6 +81,10 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
     artist.append(audio);
     audio.attr("src", "assets/audio/guitar.mp3");
 
+    vote = $('<button id="vote1" class="btn btn-vote center-block">')
+    vote.text("Vote-100");
+    artist.append(vote);
+
 		// artist = artist + $('<figcapture>').text('Song Title');
 		// artist = artist + $('<audio class="audio">');
 		// artist = artist + $('<button type="button" id="vote1" class="btn btn-vote center-block">').text('Vote');
