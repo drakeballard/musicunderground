@@ -67,7 +67,8 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
 	// console.log(childSnapshot.val());
 
 		var artist = $('<div class="col-sm-12 col-md-3 artists">');
-		picture = $('<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">');
+    //this will be changed with FB picture
+    picture = $('<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">');
 		artist.append(picture);
 		artistName = $('<p class="text-center">').text(childSnapshot.val().artist);
 		artist.append(artistName);
@@ -75,12 +76,18 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
     artist.append(song);
     hometown = $('<p class="text-center">').text(childSnapshot.val().hometown);
     artist.append(hometown);
+    //going to use audiofile for now. this will be replaced with the actual song
+    audio = $('<audio controls class="center-block">');
+    artist.append(audio);
+    audio.attr("src", "assets/audio/guitar.mp3");
+
 		// artist = artist + $('<figcapture>').text('Song Title');
 		// artist = artist + $('<audio class="audio">');
 		// artist = artist + $('<button type="button" id="vote1" class="btn btn-vote center-block">').text('Vote');
 		console.log(artist);
 		$('#competition').append(artist);
-
+    console.log(mp3);
+    console.log(audio);
 
 
 		// $('#artistName1').html(childSnapshot.val().artist);
