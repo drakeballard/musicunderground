@@ -20,7 +20,7 @@ var provider = new firebase.auth.FacebookAuthProvider();
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in. Add code to disable all Vote Buttons
-    $('#signinStatus').html('Signed In');
+    $('#signinStatus').html(' Signed In ');
   } else {
     // No user is signed in. Add code to enable all Vote Buttons
   }
@@ -41,6 +41,13 @@ $("#facebookSignin").on("click", function() {
 });
 
 var database = firebase.database();
+
+// Show artist sign up
+$("#compete").on("click", function() {
+    alert('Compete');
+    $("#signup").removeClass('hide');
+}); 
+
 
 //Pseudo code
 //Registrant needs to input information for the following: Artist name, hometown (autocomplete), song, facebook, and upload song
@@ -68,7 +75,7 @@ $("#addArtist").on("click", function() {
         //is a actual file consdiered as a val
         // song : song
 
-    }
+}
 
     database.ref().push(newUser);
 
@@ -84,7 +91,7 @@ $("#addArtist").on("click", function() {
     $('#inputSong').val("");
     $('#inputHometown').val("");
     $('#inputFB').val("");
-    //
+    $("#signup").addClass('hide');
 
 
     // Don't refresh the page!
