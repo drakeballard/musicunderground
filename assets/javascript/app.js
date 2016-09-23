@@ -14,7 +14,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //Pseudo code
-//Registrant needs to input information for the following: Artist name, location (autocomplete), song, facebook, and upload song
+//Registrant needs to input information for the following: Artist name, hometown (autocomplete), song, facebook, and upload song
 
 // Capture Button Click
 $("#addArtist").on("click", function() {
@@ -22,19 +22,19 @@ $("#addArtist").on("click", function() {
 	// Capture User Inputs and store into variables
 	var artist = $('#inputArtist').val().trim();
 	var song = $('#inputSong').val().trim();
-	var location = $('#inputLocation').val().trim();
+	var hometown = $('#inputHometown').val().trim();
 	var facebook = $('#inputFB').val().trim();
 
 	console.log(artist);
 	console.log(song);
-	console.log(location);
+	console.log(hometown);
 	console.log(facebook);
 
 
 	var newUser = {
 		artist : artist,
 		song : song,
-		location : location,
+		hometown : hometown,
 		facebook : facebook
 
 		//is a actual file consdiered as a val
@@ -47,14 +47,14 @@ $("#addArtist").on("click", function() {
 	// Console log each of the user inputs to confirm you are receiving them
 	console.log(newUser.artist);
 	console.log(newUser.song);
-	console.log(newUser.location);
+	console.log(newUser.hometown);
 	console.log(newUser.facebook);
 
 	alert("You successfully added a new band to the page! Please stay TUNED!!!! 🤘🎸🤘")
 
 	$('#inputArtist').val("");
 	$('#inputSong').val("");
-	$('#inputLocation').val("");
+	$('#inputHometown').val("");
 	$('#inputFB').val("");
 	//
 
@@ -69,10 +69,12 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
 		var artist = $('<div class="col-sm-12 col-md-3 artists">');
 		picture = $('<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">');
 		artist.append(picture);
-		artistName = $('<figcapture class="text-center">').text(childSnapshot.val().artist);
+		artistName = $('<p class="text-center">').text(childSnapshot.val().artist);
 		artist.append(artistName);
-    song = $('<figcapture>').text(childSnapshot.val().song);
+    song = $('<p class="text-center">').text(childSnapshot.val().song);
     artist.append(song);
+    hometown = $('<p class="text-center">').text(childSnapshot.val().hometown);
+    artist.append(hometown);
 		// artist = artist + $('<figcapture>').text('Song Title');
 		// artist = artist + $('<audio class="audio">');
 		// artist = artist + $('<button type="button" id="vote1" class="btn btn-vote center-block">').text('Vote');
@@ -92,12 +94,12 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
 // 			var inputArtist = childSnapshot.val().artist;
 // 			var inputSong = childSnapshot.val().song;
-// 			var inputLocation = childSnapshot.val().location;
+// 			var inputHometown = childSnapshot.val().hometown;
 // 			var inputFB = childSnapshot.val().facebook;
 
 // 			console.log(inputArtist);
 // 			console.log(inputSong);
-// 			console.log(inputLocation);
+// 			console.log(inputHometown);
 // 			console.log(inputFB);
 // 	});
 // });
@@ -115,6 +117,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
 
 //click on song, and you will be able to play & pause
 
-//click on location, google map api will be generated
+//click on hometown, google map api will be generated
 
 // click on facebook redirects to their facebook page
