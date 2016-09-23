@@ -98,11 +98,11 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     //this will be changed with FB picture
     picture = $('<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">');
     artist.append(picture);
-    artistName = $('<p class="text-center">').text(childSnapshot.val().artist);
+    artistName = $('<figcaption class="text-center">').text(childSnapshot.val().artist);
     artist.append(artistName);
-    song = $('<p class="text-center">').text(childSnapshot.val().song);
+    song = $('<figcaption class="text-center">').text(childSnapshot.val().song);
     artist.append(song);
-    hometown = $('<p class="text-center">').text(childSnapshot.val().hometown);
+    hometown = $('<figcaption class="text-center">').text(childSnapshot.val().hometown);
     artist.append(hometown);
     //going to use audiofile for now. this will be replaced with the actual song
     audio = $('<audio controls class="center-block">');
