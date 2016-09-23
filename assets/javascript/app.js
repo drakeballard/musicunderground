@@ -69,8 +69,10 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
 		var artist = $('<div class="col-sm-12 col-md-3 artists">');
 		picture = $('<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">');
 		artist.append(picture);
-		artistName = $('<figcapture>').text(childSnapshot.val().artist);
+		artistName = $('<figcapture class="text-center">').text(childSnapshot.val().artist);
 		artist.append(artistName);
+    song = $('<figcapture>').text(childSnapshot.val().song);
+    artist.append(song);
 		// artist = artist + $('<figcapture>').text('Song Title');
 		// artist = artist + $('<audio class="audio">');
 		// artist = artist + $('<button type="button" id="vote1" class="btn btn-vote center-block">').text('Vote');
