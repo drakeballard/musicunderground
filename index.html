@@ -43,7 +43,9 @@
 			</div>
 			<div id="navbar2" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Login</a></li>
+					<!-- Changing Login from link to a menu item with an id to trigger the sign in function. -->
+					<li id="facebookSignin">Login</li>
+					<li id="signinStatus"></li>
 					<li><a href="#">Compete</a></li>
 				</ul>
 			</div>
@@ -60,7 +62,7 @@
 				<figcaption class="text-center" id="artistName1">Your Band</figcaption>
 				<figcaption class="text-center">Song Title</figcaption>
 				<audio controls class="center-block">
-					<source src="assets/audio/guitar.mp3" type="audio/ogg">
+					<source src="https://firebasestorage.googleapis.com/v0/b/music-underground.appspot.com/o/images%2Fguitar.mp3?alt=media&token=d29fb6f3-5cf7-4f24-afcf-035a21966dba" type="audio/ogg">
 					Your browser does not support the audio element.
 				</audio>
 				<button type="button" id="vote1" class="btn btn-vote center-block">Vote - 1000000</button>
@@ -199,19 +201,19 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <label for="inputArtist">Artist</label>
-                        <input type="artist" class="form-control" id="inputArtist" placeholder="Artist">
+                        <input type="text" class="form-control" id="inputArtist" placeholder="Artist">
                     </div>
                     <div class="form-group">
                         <label for="inputSong">Song</label>
-                        <input type="song" class="form-control" id="inputSong" placeholder="Song">
+                        <input type="text" class="form-control" id="inputSong" placeholder="Song Title">
                     </div>
                     <div class="form-group">
-                        <label for="inputLocation">Location</label>
-                        <input type="Location" class="form-control" id="inputLocation" placeholder="Location">
+                        <label for="inputHometown">Hometown</label>
+                        <input type="text" class="form-control" id="inputHometown" placeholder="City, (State/Country)">
                     </div>
                     <div class="form-group">
                         <label for="inputFB">Facebook</label>
-                        <input type="Facebook" class="form-control" id="inputFB" placeholder="ex: https://www.facebook.com/bandofhorses">
+                        <input type="text" class="form-control" id="inputFB" placeholder="ex: https://www.facebook.com/artistname">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputFile">File input</label>
