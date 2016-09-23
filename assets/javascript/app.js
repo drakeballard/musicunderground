@@ -30,7 +30,6 @@ $("#addArtist").on("click", function() {
 	console.log(hometown);
 	console.log(facebook);
 
-
 	var newUser = {
 		artist : artist,
 		song : song,
@@ -81,8 +80,9 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
     artist.append(audio);
     audio.attr("src", "assets/audio/guitar.mp3");
 
-    vote = $('<button id="vote1" class="btn btn-vote center-block">')
-    vote.text("Vote-100");
+    vote = $('<button class="btn btn-vote center-block">')
+    vote.text("Vote  +100");
+    vote.attr('id', childSnapshot.val().artist);
     artist.append(vote);
 
 		// artist = artist + $('<figcapture>').text('Song Title');
