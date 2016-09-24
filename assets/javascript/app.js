@@ -1,5 +1,3 @@
-// alert("Test 1,2,3");
-
 //Firebase application
 // // Initialize Firebase
 var config = {
@@ -11,12 +9,85 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// Set up new instance of Firebase Database and Authorization
+
 var database = firebase.database();
+var facebookAuth = new firebase.auth.FacebookAuthProvider();
 
-//Pseudo code
-//Registrant needs to input information for the following: Artist name, hometown (autocomplete), song, facebook, and upload song
+// Set up up Firebase Storage and Anonymous Authorization for song file upload
 
-// Capture Button Click
+var anonymousAuth = firebase.auth().signInAnonymously(); 
+var storageRef = firebase.storage().ref();
+ 
+firebase.auth().signInAnonymously().catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log('Error Code: '+error.Code+' Error Message: '+error.message);
+});
+
+
+// Check to see if voter is signed in and if so diasable all vote buttons
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in. Add code to disable all Vote Buttons
+    $('#signinStatus').html(' Signed In ');
+  } else {
+    // No user is signed in. Add code to enable all Vote Buttons
+  }
+});
+
+// Code which will be used within the vote button to add voter to authorized users so if voter comes back won't be able to vote again.
+
+// function facebookSignin() {
+$("#facebookSignin").on("click", function() {    
+    
+   firebase.auth().signInWithPopup(facebookAuth).then(function(result) {
+      var token = result.credential.accessToken;
+      var user = result.user;
+   }).catch(function(error) {
+      console.log(error.code);
+      console.log(error.message);
+   });
+});
+
+
+
+// Show artist sign up
+$("#compete").on("click", function() {
+    $("#signup").removeClass('hide');
+}); 
+
+// Click function to handle when choose file is submitted to upload song to Firebase storage and pass url to new Artist
+
+$("#inputSongUpload").on('change', handleFileSelect);
+// $("#inputSongUpload").on('click', handleFileSelect);
+
+function handleFileSelect(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  var file = evt.target.files[0];
+
+  var metadata = {
+    'contentType': 'audio/mp3'
+  };
+
+  // Push to child path.
+  var uploadTask = storageRef.child('audio').child(file.name).put(file, metadata);
+
+  // Listen for errors and completion of the upload.
+  uploadTask.on('state_changed', null, function(error) {
+    console.error('Upload failed:', error);
+  }, function() {
+    console.log('Uploaded', uploadTask.snapshot.totalBytes, 'bytes.');
+    console.log(uploadTask.snapshot.metadata);
+    songURL = uploadTask.snapshot.metadata.downloadURLs[0];
+    console.log('song '+songURL);
+  });
+}
+
+// Function to process Artist Sign Up when submit button clicked
 $("#addArtist").on("click", function() {
 
     // Capture User Inputs and store into variables
@@ -30,24 +101,22 @@ $("#addArtist").on("click", function() {
     console.log(hometown);
     console.log(facebook);
 
-    var newUser = {
+    var newArtist = {
         artist: artist,
         song: song,
         hometown: hometown,
-        facebook: facebook
-
-        //is a actual file consdiered as a val
-        // song : song
-
+        facebook: facebook,
+        songURL: songURL
     }
 
-    database.ref().push(newUser);
+    database.ref().push(newArtist);
 
     // Console log each of the user inputs to confirm you are receiving them
-    console.log(newUser.artist);
-    console.log(newUser.song);
-    console.log(newUser.hometown);
-    console.log(newUser.facebook);
+    console.log(newArtist.artist);
+    console.log(newArtist.song);
+    console.log(newArtist.hometown);
+    console.log(newArtist.facebook);
+    console.log(newArtist.songURL)
 
     alert("You successfully added a new band to the page! Please stay TUNED!!!! 🤘🎸🤘")
 
@@ -55,7 +124,7 @@ $("#addArtist").on("click", function() {
     $('#inputSong').val("");
     $('#inputHometown').val("");
     $('#inputFB').val("");
-    //
+    $("#signup").addClass('hide');
 
 
     // Don't refresh the page!
@@ -69,16 +138,16 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     //this will be changed with FB picture
     picture = $('<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">');
     artist.append(picture);
-    artistName = $('<p class="text-center">').text(childSnapshot.val().artist);
+    artistName = $('<figcaption class="text-center">').text(childSnapshot.val().artist);
     artist.append(artistName);
-    song = $('<p class="text-center">').text(childSnapshot.val().song);
+    song = $('<figcaption class="text-center">').text(childSnapshot.val().song);
     artist.append(song);
-    hometown = $('<p class="text-center">').text(childSnapshot.val().hometown);
+    hometown = $('<figcaption class="text-center">').text(childSnapshot.val().hometown);
     artist.append(hometown);
     //going to use audiofile for now. this will be replaced with the actual song
     audio = $('<audio controls class="center-block">');
     artist.append(audio);
-    audio.attr("src", "assets/audio/guitar.mp3");
+    audio.attr("src", childSnapshot.val().songURL);
 
     vote = $('<button class="btn btn-vote center-block">')
     vote.text("Vote  +100");
