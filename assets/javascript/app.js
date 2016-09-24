@@ -164,7 +164,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     // console.log(audio);
 
     //Currently voting tool is going to be in a descending "clicks"
-    $(document).on('click', '.vote-btn', function() {
+    $(document).on('click', '.btn-vote', function() {
       alert("you just done voted");
     });
   
