@@ -19,6 +19,8 @@
 <!-- Moment.js Reference -->
 <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
+<!-- Validate Form Fields js Reference -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
 
 </head>
 
@@ -67,11 +69,13 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label for="inputArtist">Artist</label>
-                    <input type="text" class="form-control" id="inputArtist" placeholder="Artist">
+                    <input type="text" class="form-control" id="inputArtist" placeholder="Artist" required data-error="Please enter your Artist Name. ">
+					<div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="inputSong">Song</label>
-                    <input type="text" class="form-control" id="inputSong" placeholder="Song Title">
+                    <input type="text" class="form-control" id="inputSong" placeholder="Song Title" required data-error="Please enter your Song Title. ">
+					<div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="inputHometown">Hometown</label>
