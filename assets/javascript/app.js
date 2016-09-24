@@ -1,3 +1,4 @@
+$(document).ready(function(){
 //Firebase application
 // // Initialize Firebase
 var config = {
@@ -163,10 +164,12 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     // console.log(audio);
 
     //Currently voting tool is going to be in a descending "clicks"
-    $(".btn-vote").on("click", function() {
+    $(document).on('click', '.vote-btn', function() {
       alert("you just done voted");
-
     });
+  
+
+});
 
 });
 
