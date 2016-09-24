@@ -96,18 +96,21 @@ $("#addArtist").on("click", function() {
     var song = $('#inputSong').val().trim();
     var hometown = $('#inputHometown').val().trim();
     var facebook = $('#inputFB').val().trim();
+    var vote = 0;
 
     console.log(artist);
     console.log(song);
     console.log(hometown);
     console.log(facebook);
+    console.log(vote);
 
     var newArtist = {
         artist: artist,
         song: song,
         hometown: hometown,
         facebook: facebook,
-        songURL: songURL
+        songURL: songURL, 
+        vote : vote
     }
 
     database.ref().push(newArtist);
@@ -164,8 +167,12 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     // console.log(audio);
 
     //Currently voting tool is going to be in a descending "clicks"
-    $(document).on('click', '.btn-vote', function() {
-      alert("you just done voted");
+    $(document).on('click','.btn-vote', function() {
+        var ref = database.ref("artistName");
+        console.log(ref);
+        ref.orderByChild('artist').equalTo($(this).attr("id")).on("child_added", function(snapshot) {
+        console.log(snapshot.key);
+});
     });
   
 
