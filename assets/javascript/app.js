@@ -147,7 +147,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     //going to use audiofile for now. this will be replaced with the actual song
     audio = $('<audio controls class="center-block">');
     artist.append(audio);
-    audio.attr("src", "assets/audio/guitar.mp3");
+    audio.attr("src", childSnapshot.val().songURL);
 
     vote = $('<button class="btn btn-vote center-block">')
     vote.text("Vote  +100");
