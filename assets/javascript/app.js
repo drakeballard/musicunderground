@@ -170,9 +170,10 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     $(document).on('click','.btn-vote', function() {
         var ref = database.ref("artistName");
         console.log(ref);
-        ref.orderByChild('artist').equalTo($(this).attr("id")).on("child_added", function(snapshot) {
+        // ref.orderByChild('artist').equalTo($(this).attr("id")).on("child_added", function(snapshot) {
+        ref.orderByChild('artist').equalTo($(this).attr("id")), function(snapshot) {
         console.log(snapshot.key);
-});
+};
     });
   
 
