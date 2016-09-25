@@ -80,22 +80,22 @@
                 <div class="form-group">
                     <label for="inputHometown">Hometown</label> - Powered By Google Maps
                     <input type="text" class="form-control" id="inputHometown" placeholder="City, (State/Country)">
-                            <script>
-            var autocomplete = new google.maps.places.Autocomplete(inputHometown);
-
-            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                var place = autocomplete.getPlace();
-                console.log(place.address_components);
-            });
-        </script> 
+                    <script>
+        				var autocomplete = new google.maps.places.Autocomplete(inputHometown);
+        				google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            			var place = autocomplete.getPlace();
+        				});
+    				</script> 
                 </div>
                 <div class="form-group">
                     <label for="inputFB">Facebook</label>
                     <input type="text" class="form-control" id="inputFB" placeholder="ex: https://www.facebook.com/artistname">
                 </div>
                 <div class="form-group">
-                	<div id="fileUploadStatus"></div>
-                    <label for="inputSongUpload">File input</label>
+               	    <div class="progress progress-striped active">
+        				<div id="fileUploadStatus" class="progress-bar progress-bar-warning" style="width:0%">Uploading Song</div>
+    				</div>
+                    <label for="inputSongUpload">Upload Song</label>
                     <input type="file" id="inputSongUpload">
                 </div>
                 <button type="submit" class="btn btn-default" id="addArtist">Submit</button>

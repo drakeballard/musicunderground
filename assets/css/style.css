@@ -76,6 +76,12 @@ audio {
 	margin:10px;
 }
 
+.progress.active .progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
+    background: red;
+}
+
 /*Header*/
 
 #logo {
