@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 //Firebase application
 // // Initialize Firebase
@@ -10,23 +11,10 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// Set up new instance of Firebase Database and Authorization
+// // Set up new instance of Firebase Database and Authorization
 
 var database = firebase.database();
 var facebookAuth = new firebase.auth.FacebookAuthProvider();
-
-// Set up up Firebase Storage and Anonymous Authorization for song file upload
-
-var anonymousAuth = firebase.auth().signInAnonymously(); 
-var storageRef = firebase.storage().ref();
- 
-firebase.auth().signInAnonymously().catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  console.log('Error Code: '+error.Code+' Error Message: '+error.message);
-});
-
 
 // Check to see if voter is signed in and if so diasable all vote buttons
 
@@ -66,6 +54,19 @@ $("#inputSongUpload").on('change', handleFileSelect);
 
 
 function handleFileSelect(evt) {
+
+  // Set up up Firebase Storage and Anonymous Authorization for song file upload
+
+  var anonymousAuth = firebase.auth().signInAnonymously(); 
+  var storageRef = firebase.storage().ref();
+   
+  firebase.auth().signInAnonymously().catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log('Error Code: '+error.Code+' Error Message: '+error.message);
+  });  
+
   evt.stopPropagation();
   evt.preventDefault();
   var file = evt.target.files[0];
