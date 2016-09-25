@@ -63,16 +63,19 @@ $("#compete").on("click", function() {
 // Click function to handle when choose file is submitted to upload song to Firebase storage and pass url to new Artist
 
 $("#inputSongUpload").on('change', handleFileSelect);
-// $("#inputSongUpload").on('click', handleFileSelect);
+
 
 function handleFileSelect(evt) {
   evt.stopPropagation();
   evt.preventDefault();
   var file = evt.target.files[0];
-
   var metadata = {
     'contentType': 'audio/mp3'
   };
+
+  // Disable submit button and set up progress bar to show song uploading
+  $(".progress-bar").animate({width: "100%"}, 10000);
+  $("#addArtist").addClass("disabled");
 
   // Push to child path.
   var uploadTask = storageRef.child('audio').child(file.name).put(file, metadata);
@@ -83,6 +86,8 @@ function handleFileSelect(evt) {
   }, function() {
     console.log('Uploaded', uploadTask.snapshot.totalBytes, 'bytes.');
     console.log(uploadTask.snapshot.metadata);
+    $("#addArtist").removeClass("disabled");
+    $("#fileUploadStatus").html("Song Uploaded");
     songURL = uploadTask.snapshot.metadata.downloadURLs[0];
     console.log('song '+songURL);
   });
@@ -128,6 +133,8 @@ $("#addArtist").on("click", function() {
     $('#inputSong').val("");
     $('#inputHometown').val("");
     $('#inputFB').val("");
+    $(".progress-bar").animate({width: "0%"}, 10000);
+    $("#inputSongUpload").replaceWith($("#inputSongUpload").val('').clone(true));
     $("#signup").addClass('hide');
 
 
