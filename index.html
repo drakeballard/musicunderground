@@ -19,7 +19,8 @@
 <!-- Moment.js Reference -->
 <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-
+<!-- Google Places Map -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1s5UEm6yNvtpC_o3Bpr-i4hqPZjXymkY&libraries=places"></script>
 
 </head>
 
@@ -77,8 +78,16 @@
 					<div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
-                    <label for="inputHometown">Hometown</label>
+                    <label for="inputHometown">Hometown</label> - Powered By Google Maps
                     <input type="text" class="form-control" id="inputHometown" placeholder="City, (State/Country)">
+                            <script>
+            var autocomplete = new google.maps.places.Autocomplete(inputHometown);
+
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+                console.log(place.address_components);
+            });
+        </script> 
                 </div>
                 <div class="form-group">
                     <label for="inputFB">Facebook</label>
