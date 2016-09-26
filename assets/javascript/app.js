@@ -109,7 +109,8 @@ $(document).ready(function() {
       console.log(facebook);
       console.log(vote);
 
-      database.ref(artist).set({
+      // database.ref(artist).set({
+      database.ref(artist.replace(/\s/g, '')).set({          
           artist: artist,
           song: song,
           hometown: hometown,
@@ -170,7 +171,7 @@ $(document).ready(function() {
       audio.attr("src", childSnapshot.val().songURL);
       vote = $('<button class="btn btn-vote center-block">')
       vote.text("Vote "+childSnapshot.val().vote);
-      buttonId = childSnapshot.val().artist
+      buttonId = childSnapshot.val().artist.replace(/\s/g, '');
       console.log(buttonId);
       vote.attr('id', buttonId);
       artist.append(vote);
