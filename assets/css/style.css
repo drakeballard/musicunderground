@@ -1,29 +1,32 @@
 html {
-	height: 100%;
+  height: 100%;
 }
 
 body {
-	background: #000000;
-	background-size: cover;
-	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-	color: #ffffff;
-	padding: 10px;
+  background: #000000;
+  background-size: cover;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  color: #ffffff;
+  padding: 10px;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* General Settings */
 
 img {
-	height: 200px;
-	padding: 0 0 10px 0;
+  height: 200px;
+  padding: 0 0 10px 0;
 }
 
 .btn-vote,
+.btn-vote:focus,
 .btn-compete,
-.btn-submit {
+.btn-compete:focus,
+.btn-submit,
+.btn-submit:focus {
   color: #ffffff;
   background-color: #ff0000;
   border-color: #ffffff;
@@ -31,7 +34,7 @@ img {
 }
 
 .btn-vote:hover,
-.btn-vote:focus,
+
 .btn-vote:active,
 .btn-vote.active,
 .open .dropdown-toggle.btn-vote {
@@ -42,7 +45,7 @@ img {
 }
 
 .btn-compete:hover,
-.btn-compete:focus,
+
 .btn-compete:active,
 .btn-compete.active,
 .open .dropdown-toggle.btn-compete {
@@ -53,7 +56,7 @@ img {
 }
 
 .btn-submit:hover,
-.btn-submit:focus,
+
 .btn-submit:active,
 .btn-submit.active,
 .open .dropdown-toggle.btn-submit {
@@ -114,8 +117,8 @@ img {
 }
 
 audio {
-	width: 160px;
-	margin:10px;
+  width: 160px;
+  margin:10px;
 }
 
 .progress.active .progress-bar {
@@ -127,8 +130,8 @@ audio {
 /*Header*/
 
 #logo {
-	background: black;
-	padding: 10px 0 10px 0;
+  background: black;
+  padding: 10px 0 10px 0;
 }
 
 /* Menu */
@@ -190,7 +193,7 @@ audio {
 /*Battle Artists*/
 
 .artists {
-	padding: 10px 0 10px 0;
+  padding: 10px 0 10px 0;
 }
 
 
@@ -198,15 +201,14 @@ audio {
     background-color: #fff;
     border-style: none;
 }
-
 .img-responsive {
     margin-bottom: 20px;
 }
 .panel-primary {
-	padding: 0px;
+  padding: 0px;
 }
 .artistList{
-	right: 5px;
+  right: 5px;
 }*/
 
 @media (max-width: 767px) {
