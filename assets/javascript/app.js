@@ -21,7 +21,7 @@ $(document).ready(function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in. Add code to disable all Vote Buttons
-      $("#.btn-vote").addClass("disabled");
+      $('.btn-vote').attr("disabled","disabled");
       $('#signinStatus').html(' Signed In ');
     } else {
       // No user is signed in. Add code to enable all Vote Buttons
@@ -174,11 +174,27 @@ $(document).ready(function() {
       buttonId = childSnapshot.val().artist.replace(/\s/g, '');
       console.log(buttonId);
       vote.attr('id', buttonId);
+
+      var user = firebase.auth().currentUser;
+
+      if (user) {
+        $('.btn-vote').attr("disabled","disabled");
+      }
+
       artist.append(vote);
       $('#competition').append(artist);
   });
 
   $(document).on("click", '.btn-vote', function() {
+
+    firebase.auth().signInWithPopup(facebookAuth).then(function(result) {
+      var token = result.credential.accessToken;
+      var user = result.user;
+    }).catch(function(error) {
+      console.log(error.code);
+      console.log(error.message);
+    });
+
     artist = $(this).attr('id');  
     var db = firebase.database();
     var ref = db.ref(artist);
@@ -195,6 +211,8 @@ $(document).ready(function() {
     }, function (errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
+
+    $('.btn-vote').attr("disabled","disabled");
  
   });
 
