@@ -94,7 +94,8 @@
                 </div>
                 <div class="form-group">
                     <label for="inputFB">Facebook</label>
-                    <input type="text" class="form-control" id="inputFB" placeholder="ex: https://www.facebook.com/artistname">
+                    <input type="text" class="form-control" id="inputFB" placeholder="ex: https://www.facebook.com/artistname" required data-error="Please enter your Facebook Page. ">
+					<div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                	    <div class="progress progress-striped active">
@@ -103,7 +104,7 @@
                     <label for="inputSongUpload">Upload Song</label>
                     <input type="file" id="inputSongUpload">
                 </div>
-                <button type="submit" class="btn btn-submit" id="addArtist">Submit</button>
+                <button type="submit" class="btn btn-submit" id="addArtist" disabled:"disabled">Submit</button>
             </div>
 		</form>
 	</div>
