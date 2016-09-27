@@ -88,6 +88,8 @@ $(document).ready(function() {
       console.log(uploadTask.snapshot.metadata);
       $("#addArtist").removeClass("disabled");
       $("#fileUploadStatus").html("Song Uploaded");
+      songFileName = $('#inputSongUpload').val().trim();
+      songFileName = songFileName.replace("C:\\fakepath\\", "");
       songURL = uploadTask.snapshot.metadata.downloadURLs[0];
       console.log('song '+songURL);
     });
@@ -115,6 +117,7 @@ $(document).ready(function() {
           song: song,
           hometown: hometown,
           facebook: facebook,
+          songFileName: songFileName,
           songURL: songURL, 
           vote : vote
       });
