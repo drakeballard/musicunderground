@@ -1,5 +1,6 @@
 // alert("TIMER BITCH");
-//timer function
+//timer function\
+
 var currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
 console.log("currentTime " + currentTime);
 var destinationTime = moment("SAT 11:59:00 PM");
