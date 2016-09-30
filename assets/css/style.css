@@ -313,3 +313,7 @@ audio {
     background-color: #000000;
   }
 }
+/*This will prevent the Sign in status to occur. This can be removed later*/
+#signinStatus {
+  color: rgba(0, 0, 0, 0);
+}
