@@ -105,7 +105,7 @@ font-weight: 300;
 #compete{
   position: relative;
   right: 157px;
-  top: 40px;
+  top: 0px;
 }
 
 .btn-vote,
@@ -118,6 +118,13 @@ font-weight: 300;
   background-color: #8a51b6;
   border-color: #ffffff;
   width: 150px;
+}
+
+.btn-compete {
+  left: 217px;
+  width: 231px;
+  height: 63px;
+  top: 0px;
 }
 
 .btn-vote:hover,
