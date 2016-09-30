@@ -22,7 +22,7 @@ $(document).ready(function() {
     if (user) {
       // User is signed in. Add code to disable all Vote Buttons
       $('.btn-vote').attr("disabled","disabled");
-      $('#signinStatus').html(' Signed In ');
+      //$('#signinStatus').html(' Signed In ');
     } else {
       // No user is signed in. Add code to enable all Vote Buttons
     }
