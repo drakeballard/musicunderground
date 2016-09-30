@@ -66,6 +66,9 @@ $(document).ready(function() {
 
   $("#compete").on("click", function() {
       $("#signup").removeClass('hide');
+       $('html, body').animate({
+        scrollTop: $("#signup").offset().top
+    }, 2000);
   }); 
 
 // Call function Upload song when browse is clicked.
