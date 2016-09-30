@@ -1,4 +1,23 @@
+
 $(document).ready(function() {
+
+localStorage.setItem("hidden", 1);
+
+  function hideIt(){
+    $('#myModal').modal('hide');
+  };
+
+  
+
+$(window).load(function(){
+        $('#myModal').modal('show');
+    });
+$('.close').on('click', function(){
+  $('#myModal').modal('hide');
+});
+
+if(localStorage.hidden==="1"){ 
+    hideIt(); }
 
   //Firebase application
   // // Initialize Firebase
