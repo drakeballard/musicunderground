@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-// Function to show check local storage if hide modal has been stored. If not update local storage when user clicks out. This will keep it from showing in future visits.
+//Function to check local storage if modal has been stored. If so, Modal will stay hidden
+//If not, show modal, play audio and update local storage when user clicks close gyph. 
+//This will keep it from showing in future visits.
 
   function hideIt(){
      $('#myModal').modal('hide');
