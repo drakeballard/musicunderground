@@ -161,7 +161,7 @@ $(document).ready(function() {
 
       var artist = $('<div class="col-sm-12 col-md-3 artists">');
       //this will be changed with FB picture
-      picture = $('<img src="assets/images/headphones.jpg" id = "artist1" class="thumbnail center-block">');
+      picture = $('<img src="assets/images/headphones.jpg" id = "artist_'+(childSnapshot.val().artist).replace(/\s/g, '')+'" class="thumbnail center-block">');
       artist.append(picture);
       artistName = $('<figcaption class="text-center">').text(childSnapshot.val().artist);
       artist.append(artistName);
@@ -186,6 +186,25 @@ $(document).ready(function() {
 
       artist.append(vote);
       $('#competition').append(artist);
+
+                    // AJAX call to pull in the Artist facebook profile picture 
+        var facebookId = childSnapshot.val().facebook;
+        facebookId = facebookId.replace("http://wwww.facebook.com/","");
+        facebookId = facebookId.replace("https://wwww.facebook.com/","");
+        facebookId = facebookId.replace("/?fref=ts","");
+        
+        console.log('facebookID '+facebookId);
+        var queryURL = "https://graph.facebook.com/"+facebookId+"?access_token=EAAaMHUwehhwBAF9lczVSq6DHiF1yPUAZAkcPhnn7aPM34EXIJ788tUMVzLWOdpNhkZByvn7UEnjdeXXNS98e8AIQB7xDWatHvYaKaAVn78JAZA3nXCCitDBZAXZByg3VUP34lOsARJO6SsNfXZCtG66IHVjgd6gbYZD&fields=picture&redirect=false";
+        var queryURL = "https://graph.facebook.com/"+facebookId+"?fields=picture.type(large)";
+        $.ajax({url: queryURL, method: 'GET', processData: false}).done(function(response) {
+            // pictureUrl = response.picture.data.url.trim();
+            console.log(childSnapshot.val().artist+" "+response.picture.data.url.trim());
+            var updatePicture = "#artist_"+childSnapshot.val().artist.replace(/\s/g, '');
+            console.log('updatepic '+updatePicture);
+            artistPicture = response.picture.data.url.trim();
+            $(updatePicture).attr("src",artistPicture);
+        }); 
+
   });
 
   $(document).on("click", '.btn-vote', function() {
