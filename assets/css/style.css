@@ -93,6 +93,9 @@ font-weight: 300;
 #signup{
   position: relative;
   top: 75px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: 'New Rocker', cursive;
+  font-size: large;
 }
 
 #compete{
@@ -116,8 +119,8 @@ font-weight: 300;
 
 /*Registring the artist info*/
 .btn-compete {
-  left: 217px;
-  width: 231px;
+  left: 210px;
+  width: 225px;
   height: 63px;
   top: 0px;
   font-size: 33px;
