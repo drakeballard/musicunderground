@@ -163,7 +163,7 @@ $(document).ready(function() {
 
     var artist = $('<div class="col-sm-12 col-md-3 artists">');
     //Sets up a default artist picture which will be updated with Facebook API to pull in the Artist Profile Picture from Facebook
-    picture = $('<img src="assets/images/headphones.jpg" id = "artist_'+(childSnapshot.val().artist).replace(/\s/g, '')+'" class="thumbnail center-block">');
+    picture = $('<a href="'+childSnapshot.val().facebook+'" target="_blank"><img src="assets/images/headphones.jpg" id = "artist_'+(childSnapshot.val().artist).replace(/\s/g, '')+'" class="thumbnail center-block"></a>');
     artist.append(picture);
     artistName = $('<figcaption class="text-center">').text(childSnapshot.val().artist);
     artist.append(artistName);
