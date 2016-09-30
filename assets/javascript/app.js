@@ -11,6 +11,8 @@ $(document).ready(function() {
   } else { 
         $(window).load(function(){
         $('#myModal').modal('show');
+        var audio = new Audio('assets/audio/rumble.mp3');
+        audio.play();
   });
   
   $('.close').on('click', function(){
