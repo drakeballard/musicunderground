@@ -2,6 +2,7 @@ html {
   height: 100%;
 }
 
+/*General set-up*/
 body {
   background-image: url(../images/electricguitar.jpg);
   background-repeat: no-repeat;
@@ -16,7 +17,6 @@ body {
   box-sizing: border-box;
 }
 
-/* General Settings */
 
 img {
   height: 200px;
@@ -28,6 +28,7 @@ img {
   float: right;
 }
 
+/*This modal will pop up when the page is opened for the first time. If it does not appear then it is saved in your local storage*/
 .modal {
     /*display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -113,6 +114,7 @@ font-weight: 300;
   width: 150px;
 }
 
+/*Registring the artist info*/
 .btn-compete {
   left: 217px;
   width: 231px;
@@ -212,14 +214,8 @@ audio {
     background: #8a51b6;
 }
 
-/*Header this can be removed*/
-/*
-#logo {
-  background: black;
-  padding: 10px 0 10px 0;
-}*/
 
-/* Menu */
+/* Menu Section - NavBar*/
 
 .navbar-default {
   background-color: rgba(0, 0, 0, 0);
@@ -282,19 +278,6 @@ audio {
 }
 
 
-/*.navbar-default {
-    background-color: #fff;
-    border-style: none;
-}
-.img-responsive {
-    margin-bottom: 20px;
-}
-.panel-primary {
-  padding: 0px;
-}
-.artistList{
-  right: 5px;
-}*/
 
 @media (max-width: 767px) {
 
