@@ -18,6 +18,9 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="assets/css/style.css">
 
+<!-- Timer CSS  -->
+<link rel="stylesheet" href="assets/css/timer.css" >
+
 <!-- Firebase Reference -->
 <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 
@@ -42,8 +45,25 @@
 	</div>
 
 	<!-- Time -->
-	<div id="clockdiv"></div>
-	
+	<div id="clockdiv">
+	<div>
+		<span class="days"></span>
+		<div class="smalltext">Days</div>
+	</div>
+	<div>
+		<span class="hours"></span>
+		<div class="smalltext">Hours</div>
+	</div>
+	<div>
+		<span class="minutes"></span>
+		<div class="smalltext">Minutes</div>
+	</div>
+	<div>
+		<span class="seconds"></span>
+		<div class="smalltext">Seconds</div>
+	</div>
+</div>
+
 	<!-- Navigation -->
 	<nav class="navbar navbar-default" role="heading">
 		<div class="container-fluid">
@@ -56,6 +76,7 @@
 				</button>
 			</div>
 			<div id="navbar2" class="navbar-collapse collapse">
+
 				<ul class="nav navbar-nav navbar-right">
 					<!-- Changing Login from link to a menu item with an id to trigger the sign in function. -->
 					<li id="facebookSignin"> Login </li>
