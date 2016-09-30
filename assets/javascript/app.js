@@ -64,6 +64,9 @@ $(document).ready(function() {
   // Show artist sign up
   $("#compete").on("click", function() {
       $("#signup").removeClass('hide');
+       $('html, body').animate({
+        scrollTop: $("#signup").offset().top
+    }, 2000);
   }); 
 
   // Click function to handle when choose file is submitted to upload song to Firebase storage and pass url to new Artist
